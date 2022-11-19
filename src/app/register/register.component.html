@@ -1,1 +1,30 @@
-<p>register works!</p>
+<div class="container">
+    <p class="login" (click)="navigateToLogin()">Login</p>
+    <div class="formBox">
+        <h2>Register</h2>
+        <form action="" [formGroup]="myForm" (ngSubmit)="register()">
+            <div class="inputBox">
+                <label for="name">Name :</label>
+                <input type="text" name="name" id="name" formControlName="name" required>
+            </div>
+            <div class="inputBox">
+                <label for="email">Email :</label>
+                <input type="email" name="email" id="email" formControlName="email" required>
+            </div>
+            <div class="inputBox">
+                <label for="phone">Phone :</label>
+                <input type="text" name="phone" id="phone" formControlName="phone" required>
+            </div>
+            <div class="inputBox">
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="pass" formControlName="password" required>
+            </div>
+            <div class="success">
+                <p *ngIf="posted">Registration Successfull</p>
+            </div>
+            <div class="inputBox">
+                <input type="submit" name="submit" value="Connect" [disabled]="myForm.invalid">
+            </div>
+        </form>
+    </div>
+</div>

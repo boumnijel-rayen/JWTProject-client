@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div class="container">
+    <div class="formBox">
+        <h2>Login</h2>
+        <form action="" [formGroup]="myForm" (ngSubmit)="connect()">
+            <div class="inputBox">
+                <label for="email">Email :</label>
+                <input type="email" name="email" id="email" formControlName="email" required>
+            </div>
+            <div class="inputBox">
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="pass" formControlName="password" required>
+            </div>
+            <div class="inputBox">
+                <input type="submit" name="submit" value="Connect" [disabled]="myForm.invalid">
+            </div>
+        </form>
+    </div>
+</div>

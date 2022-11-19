@@ -1,0 +1,100 @@
+.container{
+    width: 100%;
+    height: 100vh;
+}
+
+.container .formBox{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 10px 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.container .formBox h2{
+    position: relative;
+}
+
+.container .formBox h2::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    height: 5px;
+    left: 0;
+    top: 22px;
+    background-color: #f44336;
+    margin: 10px auto;
+}
+
+.container form{
+    margin-top: 30px;
+}
+
+form .inputBox{
+    display: block;
+    margin: 20px;
+}
+
+form .inputBox input[type="email"], [type="password"], [type="text"]{
+    margin-top: 10px;
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #f44336;
+    border-radius: 15px;
+    outline: none;
+    background-color: transparent;
+}
+
+form .inputBox label{
+    margin: 10px;
+    font-weight: 700;
+}
+
+form .inputBox input[type="email"]:focus, [type="password"]:focus, [type="text"]:focus{
+    border: 1px solid springgreen;
+}
+
+form .inputBox input[type="email"]:valid, [type="password"]:valid, [type="text"]:valid{
+    border: 1px solid springgreen;
+}
+
+form .inputBox input[type="submit"]{
+    margin-top: 10px;
+    margin-left: 45%;
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #f44336;
+    border-radius: 15px;
+    outline: none;
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+}
+
+form .inputBox input[type="submit"]:disabled{
+    background-color: white;
+    color: gray;
+    border: 1px solid gray;
+    cursor: not-allowed;
+}
+
+.success p{
+    color: green;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.login{
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    top:40px;
+    left: 50px;
+}
