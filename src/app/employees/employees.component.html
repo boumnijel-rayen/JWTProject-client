@@ -1,5 +1,6 @@
 <div class="allusers">
     <p class="title"><span>pages</span> / Employees</p>
+    <button class="logout" (click)="logout()">Logout</button>
     <div class="users">
         <table>
             <thead>
@@ -7,19 +8,20 @@
                     <th>Id</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Phone</th>
+                    <th>Age</th>
+                    <th>Salary</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>image1</td>
-                    <td>raien1</td>
-                    <td>rayen</td>
-                    <td>4</td>
+                <tr *ngFor="let employee of employees">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.age}}</td>
+                    <td>{{employee.salary}}</td>
                     <td>
-                        <button type="button"  class="danger">Supprimer</button>
-                        <button type="button"  class="info">Voir</button>
+                        <button type="button" (click)="deleteEmployee(employee.id)" class="danger">Supprimer</button>
                     </td>
                 </tr>
             </tbody>

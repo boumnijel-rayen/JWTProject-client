@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-employees',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeesComponent implements OnInit {
 
-  constructor() { }
+  employees : any;
+  token = localStorage.getItem('token');
+  constructor(private auth : AuthService,private router : Router) { }
 
   ngOnInit(): void {
+    this.auth.getAllEmployees(this.token).subscribe((data)=>{
+      this.employees = data;
+    })
+  }
+
+  deleteEmployee(id:any){
+    this.auth.deleteEmployee(id, this.token).subscribe((data)=>{
+      this.ngOnInit();
+    })
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
 }
